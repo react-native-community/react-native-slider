@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import androidx.appcompat.widget.AppCompatSeekBar;
@@ -233,4 +234,23 @@ public class ReactSlider extends AppCompatSeekBar {
       setThumb(getThumb());
     }
   }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        //设置父容器不拦截事件
+        if (getParent() != null) {
+            try {
+                getParent().requestDisallowInterceptTouchEvent(true);
+                //SeekBar 放在其他视图中，手指放在 SeekBar 上面不会立即触发滑动操作
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    MotionEvent evup = MotionEvent.obtain(event);
+                    evup.setAction(MotionEvent.ACTION_MOVE);
+                    dispatchTouchEvent(evup);
+                    evup.recycle();
+                }
+            } catch (Exception exception) {
+
+            }
+        }
+        return super.onTouchEvent(event);
+    }
 }
