@@ -1,5 +1,5 @@
 # `@react-native-community/slider`
-![npm](https://img.shields.io/npm/v/@react-native-community/slider.svg)[![CircleCI Status](https://img.shields.io/circleci/project/github/react-native-community/react-native-slider/master.svg)](https://circleci.com/gh/react-native-community/workflows/react-native-slider/tree/master) ![Supports Android, iOS, and Web](https://img.shields.io/badge/platforms-android%20|%20ios%20|%20web-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/slider.svg)
+![npm](https://img.shields.io/npm/v/@react-native-community/slider.svg)[![CircleCI Status](https://img.shields.io/circleci/project/github/callstack/react-native-slider/master.svg)](https://circleci.com/gh/callstack/workflows/react-native-slider/tree/master) ![Supports Android, iOS, and Web](https://img.shields.io/badge/platforms-android%20|%20ios%20|%20web-lightgrey.svg) ![MIT License](https://img.shields.io/npm/l/@react-native-community/slider.svg)
 
 React Native component used to select a single value from a range of values.
 
