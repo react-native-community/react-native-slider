@@ -109,9 +109,12 @@ public class ReactSlider extends AppCompatSeekBar {
   @Override
   public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
     super.onPopulateAccessibilityEvent(event);
-    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED ||
-        (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SELECTED && this.isAccessibilityFocused())) {
-      this.setupAccessibility();
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED ||
+          (event.getEventType() == AccessibilityEvent.TYPE_VIEW_SELECTED && this.isAccessibilityFocused())) {
+          this.setupAccessibility();
+      }
     }
   }
 
